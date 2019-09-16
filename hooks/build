@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source .env
+
+docker build \
+  --build-arg DOCKERIZE_VERSION="$DOCKERIZE_VERSION" \
+  --build-arg HASURA_VERSION="$HASURA_VERSION" \
+  -t "$IMAGE_NAME" \
+  .
