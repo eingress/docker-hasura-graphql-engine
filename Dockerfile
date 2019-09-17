@@ -2,6 +2,8 @@ ARG HASURA_VERSION
 
 FROM hasura/graphql-engine:$HASURA_VERSION
 
+LABEL maintainer "Scott Mathieson <scott@eingress.io>"
+
 ARG DOCKERIZE_VERSION
 
 RUN wget --no-check-certificate \
