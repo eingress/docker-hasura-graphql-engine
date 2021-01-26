@@ -15,6 +15,7 @@ build:
 		.
 
 push:
+	docker push $$IMAGE_NAME:$$IMAGE_VERSION
 	docker push $$IMAGE_NAME
 
 release: build push
