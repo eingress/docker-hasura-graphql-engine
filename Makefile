@@ -15,7 +15,6 @@ build:
 		.
 
 push:
-	docker push $$IMAGE_NAME:$$IMAGE_VERSION
-	docker push $$IMAGE_NAME:beta
+	docker push --all-tags $$IMAGE_NAME
 
 release: build push
