@@ -12,6 +12,7 @@ build:
 		--build-arg HASURA_VERSION=$$HASURA_VERSION \
 		-t $$IMAGE_NAME:$$IMAGE_VERSION \
 		-t $$IMAGE_NAME:latest \
+		-t $$IMAGE_NAME:stable\
 		.
 
 push:
