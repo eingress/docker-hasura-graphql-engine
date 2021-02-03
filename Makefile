@@ -11,7 +11,7 @@ build:
 		--build-arg DOCKERIZE_VERSION=$$DOCKERIZE_VERSION \
 		--build-arg HASURA_VERSION=$$HASURA_VERSION \
 		-t $$IMAGE_NAME:$$IMAGE_VERSION \
-		-t $$IMAGE_NAME:beta \
+		-t $$IMAGE_NAME:alpha\
 		.
 
 push:
