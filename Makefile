@@ -4,18 +4,16 @@ export
 
 SHELL := /bin/bash
 
-.PHONY: build push release
+.PHONY: build release
 
 build:
-	docker build \
+	docker buildx build \
 		--build-arg DOCKERIZE_VERSION=$$DOCKERIZE_VERSION \
 		--build-arg HASURA_VERSION=$$HASURA_VERSION \
+		--platform linux/amd64 \
+		--push \
 		-t $$IMAGE_NAME:$$IMAGE_VERSION \
-		-t $$IMAGE_NAME:latest \
-		-t $$IMAGE_NAME:stable\
+		-t $$IMAGE_NAME:stable \
 		.
 
-push:
-	docker push --all-tags $$IMAGE_NAME
-
-release: build push
+release: build
